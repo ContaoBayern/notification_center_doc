@@ -1,0 +1,7 @@
+#
+# files and directories to be ignored by git
+#
+todo.md
+notification_center.pdf
+notification_center.docx
+
