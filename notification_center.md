@@ -55,24 +55,33 @@ betreffendes zu tun.
 
 ![Kontaktformular](img/contact_form.png)
 
+### Gateway konfigurieren
 
-### Benachrichtigungen anlegen
+Gateways → Neues Gateway
 
-
-
-
-
+Wir wollen Benachrichtigungen per E-Mail verschicken und legen daher – falls noch nicht geschehen –   
+ein Gateway ("Standard E-Mail-Gateway") an.
 
 ![Gateway konfigurieren](img/configure_gateway.png)
 
 
+### Benachrichtigungen anlegen
+
+Benachrichtigungen → neue Benachrichtigung
+
+Als nächstes legen wir die Benachrichtigung an, die beim Verarbeiten des Formulars verschickt werden sollen.
+
 ![Benachrichtigung konfigurieren](img/configure_notification.png)
 
-* neue Nachricht hinzufügen
+Hier muss zunächst nur angegeben werden, wann die Benachrichtigung verschickt werden soll. Im Beispiel: 
+Bei der "Formularübertragung".
+
+Danach müssen mit "Neue Nachricht" je Empfänger die Details der Benachrichtigung konfiguriert werden. 
 
 ![Neue Nachricht konfigurieren](img/configure_new_notification.png)
 
-* Neue Sprache anlegen
+Durch einen Klick auf den Button "Sprachen verwalten" und dann "Neue Sprache" fügen wir den Text der Benachrichtigung
+in der jeweiligen Sprache hinzu. (siehe die nächsten drei Abbildungen, die alle Teile eines Popups sind).
 
 ![Sprache konfigurieren (1)](img/configure_language_1.png)
 
@@ -80,16 +89,27 @@ betreffendes zu tun.
 
 ![Sprache konfigurieren (3)](img/configure_language_3.png)
 
+Zuletzt muss noch "Nachricht veröffentlichen" gesetzt werden
+
 ![Fertig konfigurierte Sprache](img/configured_language.png)
+
+Da mit Notification Center Benachrichtigungen mehrere Teile haben können wiederholen wir die obigen Schritte für alle
+Teile. Dachach haben wir folgenden Stand, an dem im Beispiel eine E-Mail an den Kunden geschickt werden soll, der das
+Formular ausfüllt und eine E-Mail an die Fachabteilung, die die Anfrage des Kunden bearbeiten soll.
 
 ![Fertig konfigurierte Benachrichtigungen](img/configured_notifications.png)
 
 
 ### Kontaktformular Benachrichtigung zuweisen
 
+Nachdem nun alles konfiguriert ist, muss im bereits erstellten Kontaktformular nun noch festgelegt werden, daß
+eine Benachrichtigung veranlasst werden soll. Dies geschieht durch auswahl im Dropdown "Benachrichtigung" und ist
+nicht mit Contaos Standardmechanismus zu verwechseln, der gleich darunter durch "Per E-Mail versenden" ausgewählt 
+werden kann! 
+
 TODO: Screenshot
 
-TODO: evtl. Screenshot mit Schnittstelle zu leads
+TODO: evtl. Screenshot wenn auch `leads` installiert ist
 
 
 ## Ausblick
