@@ -111,6 +111,17 @@ TODO: Screenshot
 
 TODO: evtl. Screenshot wenn auch `leads` installiert ist
 
+## Simple Tokens
+
+Durch die Verwendung von Simple Tokens kann in den Benachrichtigungen auf die im Formular
+übermittelten Daten zugegriffen werden.
+
+Beispiel:
+```
+Guten Tag ##form_salutation## ##form_name##,
+
+vielen Dank für Ihre Kontaktanfrage.
+```
 
 ## Ausblick
 
