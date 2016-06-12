@@ -14,11 +14,12 @@ Nach erfolgreicher Installation sind im Contao Menü weitere Punkte zu sehen:
 
 ![Hauptmenü](img/main_menu.png)
 
+
 ## Einrichtung
 
 Um Notification Center verwenden zu können müssen zunächst Gateways und Benachrichtigungen angelegt werden. Mit einem 
 Gateway wird festgelegt, wie Benachrichtigungen zu verschicken sind (per E-Mail, per SMS, oder auch als Schreiben in 
-eine Datei). 
+eine Datei).
 
 
 ### Gateways
@@ -26,15 +27,15 @@ eine Datei).
 * Der E-Mail-Versand (Standard E-Mail-Gateway) dürfte wohl der gängigste Fall sein. Wenn z.B. im Frontend ein Formular
 abgeschickt wird, soll eine Bestätigungs E-Mail erzeugt und verschickt werden.
 * Soll zusätzlich auch der Betreiber der Website benachrichtigt werden ist evtl. das Gateway "In Datei schreiben" 
-hilfreich, damit er nicht eine Flut von E-Mails erhält.
+hilfreich, damit dieser nicht eine Flut von E-Mails erhält.
 * Das "Postmark (psotmarkapp.com)" Gateway ist eine Beispiel für die Implementierung eines Gateways, das über einen
 externen Anbieter verschickt.
 
 
-### Benachrichtigung
+### Benachrichtigungen
 
 Bei den Benachrichtigungen wird konfiguriert, welche Daten im verarbeitet werden sollen und von welchem Gateway sie 
-behandelt werden sollen. Eine "Benachrichtigung" enthält dabei einen oder mehrere Teile. Am Beispiel Kontaktformular:  
+behandelt werden sollen. Eine Benachrichtigung enthält dabei einen oder mehrere Teile. Am Beispiel Kontaktformular:  
 zum einen die Benachrichtigung des Users, der das Formular abgeschickt hat und zum anderen z.B. die Benachrichtigung 
 des Websitebetreibers.
 
@@ -54,6 +55,7 @@ wird wie in Contao üblich gemacht. Wir verwenden im Beispiel das Formular `Cont
 betreffendes zu tun.
 
 ![Kontaktformular](img/contact_form.png)
+
 
 ### Gateway konfigurieren
 
@@ -81,7 +83,7 @@ Danach müssen mit "Neue Nachricht" je Empfänger die Details der Benachrichtigu
 ![Neue Nachricht konfigurieren](img/configure_new_notification.png)
 
 Durch einen Klick auf den Button "Sprachen verwalten" und dann "Neue Sprache" fügen wir den Text der Benachrichtigung
-in der jeweiligen Sprache hinzu. (siehe die nächsten drei Abbildungen, die alle Teile eines Popups sind).
+in der jeweiligen Sprache hinzu (siehe die nächsten drei Abbildungen, die alle Teile eines Popups sind).
 
 ![Sprache konfigurieren (1)](img/configure_language_1.png)
 
@@ -94,16 +96,16 @@ Zuletzt muss noch "Nachricht veröffentlichen" gesetzt werden
 ![Fertig konfigurierte Sprache](img/configured_language.png)
 
 Da mit Notification Center Benachrichtigungen mehrere Teile haben können wiederholen wir die obigen Schritte für alle
-Teile. Dachach haben wir folgenden Stand, an dem im Beispiel eine E-Mail an den Kunden geschickt werden soll, der das
-Formular ausfüllt und eine E-Mail an die Fachabteilung, die die Anfrage des Kunden bearbeiten soll.
+gewünschten Teile. Dachach haben wir folgenden Stand, an dem im Beispiel eine E-Mail an den Kunden geschickt werden 
+soll, der das Formular ausfüllt und eine E-Mail an die Fachabteilung, die die Anfrage des Kunden bearbeiten soll.
 
 ![Fertig konfigurierte Benachrichtigungen](img/configured_notifications.png)
 
 
 ### Kontaktformular Benachrichtigung zuweisen
 
-Nachdem nun alles konfiguriert ist, muss im bereits erstellten Kontaktformular nun noch festgelegt werden, daß
-eine Benachrichtigung veranlasst werden soll. Dies geschieht durch auswahl im Dropdown "Benachrichtigung" und ist
+Nachdem nun alles konfiguriert ist, muss im bereits erstellten Kontaktformular noch festgelegt werden, daß eine 
+Benachrichtigung veranlasst werden soll. Dies geschieht durch auswahl im Dropdown "Benachrichtigung" und ist
 nicht mit Contaos Standardmechanismus zu verwechseln, der gleich darunter durch "Per E-Mail versenden" ausgewählt 
 werden kann! 
 
@@ -122,6 +124,9 @@ Guten Tag ##form_salutation## ##form_name##,
 
 vielen Dank für Ihre Kontaktanfrage.
 ```
+
+Hier werden die Formularfelder `salutation` und `name` im Text der E-Mail verwendet.
+
 
 ## Ausblick
 
