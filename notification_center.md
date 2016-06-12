@@ -51,7 +51,8 @@ Betreiber der Website ebenfalls benachrichtigt werden soll.
 
 Wir beginnen mit der Erstellung des Kontaktformulars. Dies hat zunächst nichts mit Notification Center zu tun und
 wird wie in Contao üblich gemacht. Wir verwenden im Beispiel das Formular `Contact` aus der Offizielle Contao-Demo
-(https://contao.org/de/erweiterungsliste/view/official_demo.de.html). Hier ist zunächst noch nichts zu beachten, was mit dem Notification Center zu tun hätte.
+(https://contao.org/de/erweiterungsliste/view/official_demo.de.html). Hier ist zunächst noch nichts zu beachten, was 
+mit dem Notification Center zu tun hätte.
 
 ![Kontaktformular](img/contact_form.png)
 
