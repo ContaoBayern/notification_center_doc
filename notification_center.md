@@ -17,13 +17,8 @@ Nach erfolgreicher Installation sind im Contao Menü weitere Punkte zu sehen:
 
 ## Einrichtung
 
-<<<<<<< HEAD
 Um Notification Center verwenden zu können müssen zunächst Gateways und Benachrichtigungen angelegt werden. Mit einem 
 Gateway wird festgelegt, wie Benachrichtigungen zu verschicken sind (per E-Mail, per SMS, oder auch als Schreiben in 
-=======
-Um Notification Center verwenden zu können, müssen zunächst Gateways und Benachrichtigungen angelegt werden. Mit einem
-Gateway wird festgelegt, wie Benachrichtigungen zu verschicken sind (per E-Mail, per SMS, oder auch als Schreiben in
->>>>>>> origin/master
 eine Datei).
 
 
@@ -31,29 +26,18 @@ eine Datei).
 
 * Der E-Mail-Versand (Standard E-Mail-Gateway) dürfte wohl der gängigste Fall sein. Wenn z.B. im Frontend ein Formular
 abgeschickt wird, soll eine Bestätigungs E-Mail erzeugt und verschickt werden.
-<<<<<<< HEAD
 * Soll zusätzlich auch der Betreiber der Website benachrichtigt werden ist evtl. das Gateway "In Datei schreiben" 
 hilfreich, damit dieser nicht eine Flut von E-Mails erhält.
-=======
-* Soll zusätzlich auch der Betreiber der Website benachrichtigt werden ist evtl. das Gateway "In Datei schreiben"
-hilfreich, damit er nicht eine Flut von E-Mails erhält.
->>>>>>> origin/master
 * Das "Postmark (psotmarkapp.com)" Gateway ist eine Beispiel für die Implementierung eines Gateways, das über einen
 externen Anbieter verschickt.
 
 
 ### Benachrichtigungen
 
-<<<<<<< HEAD
-Bei den Benachrichtigungen wird konfiguriert, welche Daten im verarbeitet werden sollen und von welchem Gateway sie 
-behandelt werden sollen. Eine Benachrichtigung enthält dabei einen oder mehrere Teile. Am Beispiel Kontaktformular:  
-zum einen die Benachrichtigung des Users, der das Formular abgeschickt hat und zum anderen z.B. die Benachrichtigung 
-=======
-Bei den Benachrichtigungen wird konfiguriert, welche Daten im Notification Center verarbeitet werden sollen und von welchem Gateway sie
-behandelt werden sollen. Eine "Benachrichtigung" enthält dabei einen oder mehrere Teile. Am Beispiel Kontaktformular:  
-zum einen die Benachrichtigung des Users, der das Formular abgeschickt hat und zum anderen z.B. die Benachrichtigung
->>>>>>> origin/master
-des Websitebetreibers.
+Bei den Benachrichtigungen wird konfiguriert, welche Daten im Notification Center verarbeitet werden sollen und von 
+welchem Gateway sie behandelt werden sollen. Eine "Benachrichtigung" enthält dabei einen oder mehrere Teile. Am 
+Beispiel Kontaktformular: zum einen die Benachrichtigung des Users, der das Formular abgeschickt hat und zum anderen 
+z.B. die Benachrichtigung des Websitebetreibers.
 
 
 ## Ein komplettes Beispiel
@@ -120,17 +104,11 @@ soll, der das Formular ausfüllt und eine E-Mail an die Fachabteilung, die die A
 
 ### Kontaktformular Benachrichtigung zuweisen
 
-<<<<<<< HEAD
 Nachdem nun alles konfiguriert ist, muss im bereits erstellten Kontaktformular noch festgelegt werden, daß eine 
 Benachrichtigung veranlasst werden soll. Dies geschieht durch auswahl im Dropdown "Benachrichtigung" und ist
 nicht mit Contaos Standardmechanismus zu verwechseln, der gleich darunter durch "Per E-Mail versenden" ausgewählt 
 werden kann! 
-=======
-Nachdem nun alles konfiguriert ist, muss im bereits erstellten Kontaktformular nun noch festgelegt werden, daß
-eine Benachrichtigung veranlasst werden soll. Dies geschieht durch auswahl im Dropdown "Benachrichtigung" und ist
-nicht mit Contaos Standardmechanismus zu verwechseln, der gleich darunter durch "Per E-Mail versenden" ausgewählt
-werden kann!
->>>>>>> origin/master
+
 
 TODO: Screenshot
 
