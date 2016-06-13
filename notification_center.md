@@ -17,8 +17,8 @@ Nach erfolgreicher Installation sind im Contao Menü weitere Punkte zu sehen:
 
 ## Einrichtung
 
-Um Notification Center verwenden zu können müssen zunächst Gateways und Benachrichtigungen angelegt werden. Mit einem 
-Gateway wird festgelegt, wie Benachrichtigungen zu verschicken sind (per E-Mail, per SMS, oder auch als Schreiben in 
+Um Notification Center verwenden zu können müssen zunächst Gateways und Benachrichtigungen angelegt werden. Mit einem
+Gateway wird festgelegt, wie Benachrichtigungen zu verschicken sind (per E-Mail, per SMS, oder auch als Schreiben in
 eine Datei).
 
 
@@ -26,18 +26,24 @@ eine Datei).
 
 * Der E-Mail-Versand (Standard E-Mail-Gateway) dürfte wohl der gängigste Fall sein. Wenn z.B. im Frontend ein Formular
 abgeschickt wird, soll eine Bestätigungs E-Mail erzeugt und verschickt werden.
-* Soll zusätzlich auch der Betreiber der Website benachrichtigt werden ist evtl. das Gateway "In Datei schreiben" 
+* Soll zusätzlich auch der Betreiber der Website benachrichtigt werden ist evtl. das Gateway "In Datei schreiben"
 hilfreich, damit dieser nicht eine Flut von E-Mails erhält.
+* Queue schickt die Nachrichten zunächst in eine Warteschleife, wo sie dann von der eigentlichen Versandart abgearbeitet werden. Diese Option ist aber auch hilfreich, wenn man beim Einrichten der Benachrichtigungen nicht so viele Mails senden/empfangen möchte, sondern nur deren Inhalt auslesen und die zur Verfügung stehenden Parameter erkunden möchte.
 * Das "Postmark (psotmarkapp.com)" Gateway ist eine Beispiel für die Implementierung eines Gateways, das über einen
 externen Anbieter verschickt.
 
 
 ### Benachrichtigungen
 
-Bei den Benachrichtigungen wird konfiguriert, welche Daten im Notification Center verarbeitet werden sollen und von 
-welchem Gateway sie behandelt werden sollen. Eine "Benachrichtigung" enthält dabei einen oder mehrere Teile. Am 
-Beispiel Kontaktformular: zum einen die Benachrichtigung des Users, der das Formular abgeschickt hat und zum anderen 
+Bei den Benachrichtigungen wird konfiguriert, welche Daten im Notification Center verarbeitet werden sollen und von
+welchem Gateway sie behandelt werden sollen. Eine "Benachrichtigung" enthält dabei einen oder mehrere Teile. Am
+Beispiel Kontaktformular: zum einen die Benachrichtigung des Users, der das Formular abgeschickt hat und zum anderen
 z.B. die Benachrichtigung des Websitebetreibers.
+Benachrichtigungen können folgende Typen sein:
+* Formularübertragung: Hier werden Nachrichten konfiguriert, die nach dem Absenden eines Formulars versendet werden sollen. Dieses Formular muss im Formulargenerator angelegt werden.
+* Mitgieds Registration: Hier werden Nachrichten konfiguriert, die bei der Registrierung eines neuen Mitglieds (Frontenduser) versendet werden.
+* Mitglied: Persönliche Daten - Hier werden Nachrichten konfiguriert, die nach der Änderung von persönlichen Daten eines Mitglieds versendet werden.
+* Mitglied: Passwort vergessen - Hier werden Nachrichten konfiguriert, die bei Klick auf den "Passwort vergessen"-Link versendet werden.
 
 
 ## Ein komplettes Beispiel
@@ -51,7 +57,7 @@ Betreiber der Website ebenfalls benachrichtigt werden soll.
 
 Wir beginnen mit der Erstellung des Kontaktformulars. Dies hat zunächst nichts mit Notification Center zu tun und
 wird wie in Contao üblich gemacht. Wir verwenden im Beispiel das Formular `Contact` aus der Offizielle Contao-Demo
-(https://contao.org/de/erweiterungsliste/view/official_demo.de.html). Hier ist zunächst noch nichts zu beachten, was 
+(https://contao.org/de/erweiterungsliste/view/official_demo.de.html). Hier ist zunächst noch nichts zu beachten, was
 mit dem Notification Center zu tun hätte.
 
 ![Kontaktformular](img/contact_form.png)
@@ -63,6 +69,7 @@ Gateways → Neues Gateway
 
 Wir wollen Benachrichtigungen per E-Mail verschicken und legen daher – falls noch nicht geschehen –   
 ein Gateway ("Standard E-Mail-Gateway") an.
+Sollen die Nachrichten nicht über den Standard-Account versendet werden, kann man hier eigene SMTP-Einstellungen angeben. (Standard-Account meint hier, die in den Systemeinstellungen gemachten Angaben. Sind dort keine SMTP-Einstellungen hinterlegt, wird über php mail versendet.)
 
 ![Gateway konfigurieren](img/configure_gateway.png)
 
@@ -97,7 +104,7 @@ Zuletzt muss noch "Nachricht veröffentlichen" gesetzt werden
 ![Fertig konfigurierte Sprache](img/configured_language.png)
 
 Da mit Notification Center Benachrichtigungen mehrere Teile haben können wiederholen wir die obigen Schritte für alle
-gewünschten Teile. Dachach haben wir folgenden Stand, an dem im Beispiel eine E-Mail an den Kunden geschickt werden 
+gewünschten Teile. Dachach haben wir folgenden Stand, an dem im Beispiel eine E-Mail an den Kunden geschickt werden
 soll, der das Formular ausfüllt und eine E-Mail an die Fachabteilung, die die Anfrage des Kunden bearbeiten soll.
 
 ![Fertig konfigurierte Benachrichtigungen](img/configured_notifications.png)
@@ -105,10 +112,10 @@ soll, der das Formular ausfüllt und eine E-Mail an die Fachabteilung, die die A
 
 ### Kontaktformular Benachrichtigung zuweisen
 
-Nachdem nun alles konfiguriert ist, muss im bereits erstellten Kontaktformular noch festgelegt werden, daß eine 
+Nachdem nun alles konfiguriert ist, muss im bereits erstellten Kontaktformular noch festgelegt werden, daß eine
 Benachrichtigung veranlasst werden soll. Dies geschieht durch auswahl im Dropdown "Benachrichtigung" und ist
-nicht mit Contaos Standardmechanismus zu verwechseln, der gleich darunter durch "Per E-Mail versenden" ausgewählt 
-werden kann! 
+nicht mit Contaos Standardmechanismus zu verwechseln, der gleich darunter durch "Per E-Mail versenden" ausgewählt
+werden kann!
 
 
 TODO: Screenshot
@@ -128,6 +135,21 @@ vielen Dank für Ihre Kontaktanfrage.
 ```
 
 Hier werden die Formularfelder `salutation` und `name` im Text der E-Mail verwendet.
+
+Eine weitere Erklärung zu Simple Tokens findet sich auch in der [Isotope-Dokumentation](https://isotopeecommerce.org/de/handbuch/v/2.3/r/simple-tokens.html "zur Isotope-Dokumentation")
+
+Zu beachten ist aber, dass auf der angegebenen Seite ein Bepiel für eine personalisierte Anrede steht, das so nicht funktioniert. Der zu vergleichende Wert im if-Statement muss der Labelwert sein. ('Weiblich' statt 'female'). Für unser Formular bedeutet das:
+...
+
+{if form_salutation=="Mr."}
+Sehr geehrter Herr ##form_lastname##,
+{elseif form_salutation=="Mrs."}
+Sehr geehrte Frau ##form_lastname##,
+{else}
+Sehr geehrte Damen und Herren,
+{endif}
+
+...
 
 
 ## Ausblick
