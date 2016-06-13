@@ -136,7 +136,7 @@ vielen Dank für Ihre Kontaktanfrage.
 
 Hier werden die Formularfelder `salutation` und `name` im Text der E-Mail verwendet.
 
-Eine weitere Erklärung zu Simple Tokens findet sich auch in der [Isotope-Dokumentation](https://isotopeecommerce.org/de/handbuch/v/2.3/r/simple-tokens.html "zur Isotope-Dokumentation")
+Weitere Erklärungen zu Simple Tokens finden sich auch in der [Isotope-Dokumentation](https://isotopeecommerce.org/de/handbuch/v/2.3/r/simple-tokens.html "zur Isotope-Dokumentation")
 
 Zu beachten ist aber, dass auf der angegebenen Seite ein Bepiel für eine personalisierte Anrede steht, das so nicht funktioniert. Der zu vergleichende Wert im if-Statement muss der Labelwert sein. ('Weiblich' statt 'female'). Für unser Formular bedeutet das:
 ```
