@@ -139,8 +139,7 @@ Hier werden die Formularfelder `salutation` und `name` im Text der E-Mail verwen
 Eine weitere Erklärung zu Simple Tokens findet sich auch in der [Isotope-Dokumentation](https://isotopeecommerce.org/de/handbuch/v/2.3/r/simple-tokens.html "zur Isotope-Dokumentation")
 
 Zu beachten ist aber, dass auf der angegebenen Seite ein Bepiel für eine personalisierte Anrede steht, das so nicht funktioniert. Der zu vergleichende Wert im if-Statement muss der Labelwert sein. ('Weiblich' statt 'female'). Für unser Formular bedeutet das:
-...
-
+```
 {if form_salutation=="Mr."}
 Sehr geehrter Herr ##form_lastname##,
 {elseif form_salutation=="Mrs."}
@@ -149,7 +148,7 @@ Sehr geehrte Frau ##form_lastname##,
 Sehr geehrte Damen und Herren,
 {endif}
 
-...
+```
 
 
 ## Ausblick
