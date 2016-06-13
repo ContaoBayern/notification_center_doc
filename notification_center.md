@@ -154,3 +154,4 @@ Sehr geehrte Damen und Herren,
 ## Ausblick
 
 Daten speichern mit `terminal42/contao-leads`
+Eventanmeldung mit 'terminal42/contao-leads' und 'kmielke/calendar-extended'
