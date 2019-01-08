@@ -41,7 +41,7 @@ Beispiel Kontaktformular: zum einen die Benachrichtigung des Users, der das Form
 z.B. die Benachrichtigung des Websitebetreibers.
 Benachrichtigungen können folgende Typen sein:
 * Formularübertragung: Hier werden Nachrichten konfiguriert, die nach dem Absenden eines Formulars versendet werden sollen. Dieses Formular muss im Formulargenerator angelegt werden.
-* Mitgieds Registration: Hier werden Nachrichten konfiguriert, die bei der Registrierung eines neuen Mitglieds (Frontenduser) versendet werden.
+* Mitglied: Registrierung - Hier werden Nachrichten konfiguriert, die bei der Registrierung eines neuen Mitglieds (Frontenduser) versendet werden.
 * Mitglied: Persönliche Daten - Hier werden Nachrichten konfiguriert, die nach der Änderung von persönlichen Daten eines Mitglieds versendet werden.
 * Mitglied: Passwort vergessen - Hier werden Nachrichten konfiguriert, die bei Klick auf den "Passwort vergessen"-Link versendet werden.
 
